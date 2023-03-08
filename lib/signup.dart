@@ -97,6 +97,47 @@ class _SignupState extends State<Signup> {
                 },
               ),
             ),
+            Container(
+              width: MediaQuery.of(context).size.width - 10,
+              height: 55,
+              padding: EdgeInsets.all(0),
+              // ignore: sort_child_properties_last
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                gradient: LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 255, 162, 121),
+                    Color.fromARGB(255, 243, 116, 61),
+                  ],
+                ),
+              ),
+              margin: const EdgeInsets.only(bottom: 19),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
+                child: Text(
+                  'Read',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 250, 250, 250),
+                      fontSize: 24),
+                ),
+                onPressed: () {
+                  print('Next');
+                  print(name);
+                  Map<String, String> students = {
+                    'name': name,
+                  };
+                  // dbRef.push().set(students);
+                },
+              ),
+            ),
           ]),
         ),
       ),
